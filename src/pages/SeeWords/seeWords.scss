@@ -1,0 +1,167 @@
+@import "./../../styles/vars.scss";
+
+.seeWords {
+    padding: 4.5rem;        
+    padding-top: 3rem;
+    transition: 0.3s;
+    overflow: hidden;
+
+
+    .seeWords__title {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2rem;
+        font-size: 1.5rem;
+        border-bottom: var(--border);
+        color: var(--black);
+        text-align: center;
+    }
+
+    .seeWords__content-wrapper {
+        width: 100%;
+        display: flex;
+        column-gap: 25px;
+
+        .seeWords__content {
+            width: 75%;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            gap: 7px;
+            // overflow-y: scroll;
+            // height: 72vh;
+
+            .seeWords__item {
+                width: 100%;
+                min-height: 80px;
+                padding: 1.8rem;
+                border-radius: 7px;
+                background-color: var(--word-bg);
+                position: relative;
+    
+    
+                .seeWords__item-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    & p {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: var(--black);
+                    }
+    
+                    
+                    
+                }
+    
+                .seeWord__item-bottom {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: center;
+                    row-gap: 5px;
+                    background-color: var(--word-bg);
+                    color: var(--black);
+    
+                    & > p {
+                        font-size: 1.6rem;
+                    } 
+    
+                    .seeWord__sentences {
+                        padding: 2rem;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        column-gap: 15px;
+    
+                        .seeWord__sentences-items {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            justify-content: center;
+                            row-gap: 5px;
+    
+                            & > p {
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include mediaSize991px {
+                width: 100%;
+            }
+        }
+
+        .animatedGif__box {
+            width: 400px;
+            padding: 10px;
+            height: 350px;  
+            margin-top: 25px;
+            border: var(--border);
+            border-radius: 15px;
+            box-shadow: 0 0 10px 4px var(--word-bg);
+
+            .animatedGif__box-img {
+                width: 100%;
+                text-align: center;
+
+                & img {
+                    width: 225px;
+                    height: 225px;
+                }
+            }
+
+            .animated__box-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 5px;
+                text-align: center;
+                color: var(--black);
+                font-size: 2rem;
+            }
+
+            @include mediaSize991px {
+                order: -1;
+                width: 100%;
+            }
+        }
+
+        @include mediaSize991px {
+            flex-direction: column;
+        }
+    }
+
+
+    .seeWords__item-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 7px;
+        font-size: 2.5rem;
+        color: var(--black);
+    }
+
+    .seeWords__item-icons2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 7px;
+        font-size: 1.5rem;
+        color: var(--black);
+    }
+
+    .word-delete-btn {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 2rem;
+        color: var(--red);
+    }
+}

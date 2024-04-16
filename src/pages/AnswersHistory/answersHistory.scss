@@ -1,0 +1,135 @@
+@import "./../../styles/vars.scss";
+
+.history {
+    padding: 4.5rem;        
+    padding-top: 3rem;
+    transition: 0.3s;
+
+    .history__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .history__title {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 2rem;
+            font-size: 1.5rem;
+            border-bottom: var(--border);
+            color: var(--black);
+            text-align: center;
+        }
+
+        .history__inner-wrapper {
+            width: 100%;
+            display: flex;
+            column-gap: 25px;
+
+            .history__content {
+                width: 80%;
+                margin-top: 25px;
+                display: flex;
+                flex-direction: column;
+    
+                .history__content-item__wrapper {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+    
+                    .history__content-item__top {
+                        width: 100%;
+                        height: 75px;
+                        padding: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 1.9rem;
+                        background-color: var(--word-bg);
+                        border-radius: 10px;
+                        color: var(--black);
+                        margin-bottom: 5px;
+    
+                        .history__info {
+                            display: flex;
+                            column-gap: 10px;
+                            font-weight: 600;
+                        }
+                    }
+    
+                    .history__content-item__bottom {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 7px;
+                        margin-bottom: 5px;
+    
+    
+                        .answers__history-item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 10px;
+                            border-radius: 10px;
+                            color: var(--black);
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+                @include mediaSize991px {
+                    width: 100%;
+                }
+            }
+
+            .animatedGif__box {
+                width: 400px;
+                padding: 10px;
+                height: 300px;  
+                margin-top: 25px;
+                border: var(--border);
+                border-radius: 15px;
+                box-shadow: 0 0 10px 4px var(--word-bg);
+    
+                .animatedGif__box-img {
+                    width: 100%;
+                    text-align: center;
+    
+                    & img {
+                        width: 225px;
+                        height: 225px;
+                    }
+                }
+    
+                .animated__box-content {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                    text-align: center;
+                    color: var(--black);
+                    font-size: 2rem;
+                }
+    
+                @include mediaSize991px {
+                    order: -1;
+                    width: 100%;
+                }
+            }
+
+            @include mediaSize991px {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.random {
+    z-index: 5000;
+
+    & img {
+        width: 100px;
+        height: 100px;
+    }
+}

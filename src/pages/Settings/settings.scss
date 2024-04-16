@@ -1,0 +1,65 @@
+@import "./../../styles/vars.scss";
+
+.settings {
+    padding: 4.5rem;        
+    padding-top: 3rem;
+    transition: 0.3s;
+
+    .settings__title {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2rem;
+        font-size: 1.5rem;
+        border-bottom: var(--border);
+        color: var(--black);
+        text-align: center;
+    }
+
+    .settings__voiceChange {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+
+    .settings__bottom {
+        width: 100%;
+        position: absolute;
+        position: fixed;
+        bottom: 0;
+
+        .gif-toRight {
+            animation: toRight 4s linear infinite;
+        }
+        
+        .gif-toLeft {
+            animation: toLeft 4s linear infinite;
+        }
+        
+        & img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+
+
+@keyframes toRight {
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes toLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-20%);
+    }
+}

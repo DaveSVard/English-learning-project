@@ -1,0 +1,175 @@
+@import "./../../styles/vars.scss";
+
+.addWord {
+    padding: 4.5rem;        
+    padding-top: 3rem;
+    transition: 0.3s;
+    height: 85vh;
+    
+    .addWord__wrapper {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        .addWord__title {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 2rem;
+            font-size: 1.5rem;
+            border-bottom: var(--border);
+            color: var(--black);
+            text-align: center;
+        }
+        
+        .addWord__inner-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 25px;
+            padding: 10px;
+
+
+            .addWord__form {
+                width: clamp(290px, 40vw, 600px);
+                margin-top: 25px;
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+                border: var(--border);
+                border-radius: 15px;
+                box-shadow: 0px 0px 10px 1px #888;
+    
+                .addWord__item {
+                    position: relative;
+                    width: 100%;
+        
+                    & input, & textarea {
+                        width: 100%;
+                        padding: 10px;
+                        border: var(--border);
+                        background-color: var(--light-bg);
+                        border-radius: .5rem;
+                        color: var(--black);
+                        font-size: 2rem;
+                        resize: none;
+                        transition: 0.4s;
+        
+                        margin-top: 10px;
+        
+                        &:focus , &:valid {
+                            border: var(--border);
+                        }
+                    }
+        
+                    & textarea {
+                        height: 50px;
+                    }
+        
+                    &  input:focus ~ span , &  textarea:focus ~ span {
+                        color: var(--black);
+                        transform: translateX(10px) translateY(-7px);
+                        font-size: 1.2rem;
+                        padding: 0 10px;
+                        background-color: var(--light-bg);
+                        border-left: var(--border);
+                        border-right: var(--border);
+                        letter-spacing: 0.1em;
+                    }
+        
+                    .labelline {
+                        position: absolute;
+                        left: 0;
+                        top: 12px;
+                        padding: 10px;
+                        pointer-events: none;
+                        font-size: 1.5rem;
+                        color: var(--black);
+                        transition: 0.4s;
+                    }
+        
+                    .span{
+                        color: var(--black);
+                        transform: translateX(10px) translateY(-7px);
+                        font-size: 1.2rem;
+                        padding: 0 10px;
+                        background-color: var(--light-bg);
+                        border-left: var(--border);
+                        border-right: var(--border);
+                        letter-spacing: 0.1em;
+                    }
+                }
+                
+                .addWord__form-flex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 5px;
+                }
+
+                @include mediaSize991px {
+                    width: 100%;
+                }
+            }   
+
+            .animatedGif__box {
+                width: 400px;
+                padding: 10px;
+                height: 300px;  
+                margin-top: 25px;
+                border: var(--border);
+                border-radius: 15px;
+                box-shadow: 0 0 10px 4px var(--word-bg);
+    
+                .animatedGif__box-img {
+                    width: 100%;
+                    text-align: center;
+    
+                    & img {
+                        width: 225px;
+                        height: 225px;
+                    }
+                }
+    
+                .animated__box-content {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                    text-align: center;
+                    color: var(--black);
+                    font-size: 2rem;
+                }
+    
+                @include mediaSize991px {
+                    order: -1;
+                    width: 100%;
+                }
+            }
+
+            @include mediaSize991px {
+                flex-direction: column;
+            }
+
+
+        }
+    }
+}
+
+.removeInput-btn {
+    padding: 5px;
+    width: 30px !important;
+    height: 50px !important;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--red) !important;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.addInput-btn { 
+    padding: 5px;
+    width: 100%;
+}

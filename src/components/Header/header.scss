@@ -1,0 +1,113 @@
+@import "./../../styles/vars.scss";
+
+.header {
+    background-color: var(--white);
+    border-bottom: var(--border);
+    transition: 0.3s;
+    position: sticky;
+    top: 0;
+    left: 0; 
+    right: 0;
+    z-index: 1000;
+
+    .container {
+        padding: 1.5rem 2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 25px;
+
+        .header__logo {
+            color: var(--black);
+            font-size: 2.5rem;
+            font-weight: bolder;
+        }
+
+        .search__form {
+            width: 50rem;
+            padding: 1.5rem 2rem;
+            border-radius: .5rem;
+            margin-left: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background-color: var(--light-bg);
+            flex-grow: 1;
+
+
+            & input {
+                width: 100%;
+                background: none;
+                font-size: 2rem;
+                color: var(--black);
+            }
+
+            & button {
+                font-size: 2.5rem;
+                color: var(--black);
+                cursor: pointer;
+                background: none;
+                transition: 0.2s;
+
+                &:hover {
+                    color: var(--main-color);
+                }
+            }
+
+            @include mediaSize768px {
+                width: auto;
+                position: absolute;
+                margin-left: 0rem;
+                top: 99%; left: 0; right: 0;
+                border-top: var(--border);
+                border-bottom: var(--border);
+                background-color: var(--white);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: .2s linear;
+            }
+        }
+
+        .header__icons {
+            display: flex;
+            
+            & div {
+                margin-left: .5rem;
+                width: 4.5rem;
+                height: 4.5rem;
+                cursor: pointer;
+                text-align: center;
+                font-size: 2rem;
+                line-height: 4.4rem;
+                background-color: var(--light-bg);
+                border-radius: .5rem;
+                color: var(--black);
+                transition: 0.2s;
+
+                &:hover {
+                    background-color: var(--black);
+                    color: var(--white);
+                }
+                
+            }
+
+            
+            #search-btn {
+                display: none;
+
+                @include mediaSize768px {
+                    display: inline-block;
+                }
+            }
+        }
+
+        @include mediaSize768px {
+            justify-content: end;
+            
+            .search__form.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+}
+

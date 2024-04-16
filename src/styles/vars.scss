@@ -1,0 +1,68 @@
+// colors 
+
+:root {
+    --main-color: #2253a0;
+    // --main-color: #8e44ad;
+    // --main-color: #bc986a;
+    // --main-color: #dfa55a;
+    // --main-color: #4d4a44;
+    // --main-color: #379683;
+    --lite-main-color: #2a5daf;
+    --red: #D70040;
+    --red: rgb(143, 90, 90);
+    --orange: #f39c12;
+    --white: #fff;
+    --black: #2c3e50;
+    --light-color: #888;
+    --light-bg: #eee;
+    --border: .1rem solid rgba(0, 0, 0, .2);
+    --word-bg: #ccc9c6;
+    --form-btn-bg: #51ae30;
+}
+
+// medias
+
+$media1200px: 1200px;
+$media1000px: 1000px;
+$media991px: 991px;
+$media768px: 768px;
+$media550px: 550px;
+$media450px: 450px;
+
+// mixins 
+
+@mixin mediaSize1200px {
+    @media screen and (max-width: $media1200px) {
+        @content;
+    }
+}
+
+@mixin mediaSize1000px {
+    @media screen and (max-width: $media1000px) {
+        @content;
+    }
+}
+
+@mixin mediaSize991px {
+    @media screen and (max-width: $media991px) {
+        @content;
+    }
+}
+
+@mixin mediaSize768px {
+    @media screen and (max-width: $media768px) {
+        @content;
+    }
+}
+
+@mixin mediaSize550px {
+    @media screen and (max-width: $media550px) {
+        @content;
+    }
+}
+
+@mixin mediaSize450px {
+    @media screen and (max-width: $media450px) {
+        @content;
+    }
+}

@@ -1,0 +1,18 @@
+@import "./../../styles/vars.scss";
+
+.footer {
+    position: fixed;
+    margin-top: 2rem;
+    bottom: 0; right: 0; left: 0;
+    z-index: 999;
+    background-color: var(--white);
+    border-top: var(--border);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--black);
+    font-size: 2rem;
+
+    & span {
+        color: var(--main-color);
+    }
+}
