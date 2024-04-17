@@ -12,6 +12,7 @@ export const Header:React.FC = React.memo(():JSX.Element => {
     const [toggleBtn, setToggleBtn] = useState<boolean>(false)
     const [isSidebar, setIsSidebar] = useState<boolean>(true)
     const [sidebarRef, setSidebarRef] = useState<HTMLDivElement | null>(null);
+    const [width, setWidth] = useState<number>(window.innerWidth)
     const seeSearch = () => {
         searchBtn.current.classList.toggle("active")   
     }
@@ -23,6 +24,17 @@ export const Header:React.FC = React.memo(():JSX.Element => {
             document.body.classList.toggle("active")
         }
     }
+
+    const toggleSidebarForPhone = () => {
+        if(window.innerWidth <= 1200) {
+            setIsSidebar(!isSidebar)
+            if(sidebarRef) {
+                sidebarRef?.classList.toggle("active")
+                document.body.classList.toggle("active")
+            }
+        }
+    }
+
 
     const handleSidebarRef = (ref:HTMLDivElement | null) => {
         setSidebarRef(ref);
@@ -71,7 +83,7 @@ export const Header:React.FC = React.memo(():JSX.Element => {
                 </div>
             </div>
 
-            <Sidebar onSidebarRef={handleSidebarRef} toggleSidebar={toggleSidebar} isSidebar = {isSidebar}/>
+            <Sidebar onSidebarRef={handleSidebarRef} toggleSidebar={toggleSidebar} isSidebar = {isSidebar} toggleSidebarForPhone = {toggleSidebarForPhone}/>
         </header>
     )
 })

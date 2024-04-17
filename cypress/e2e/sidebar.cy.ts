@@ -3,9 +3,9 @@ describe("template spec", () => {
     cy.visit("localhost:3000");
     cy.viewport(1450, 768);
 
-  it("navbar", () => {
-    
-  })
+  
+    cy.visit("localhost:3000");
+    cy.get(".navbar").should("exist")
 
 
 

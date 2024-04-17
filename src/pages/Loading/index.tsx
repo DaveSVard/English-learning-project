@@ -16,7 +16,7 @@ export const Loading = () => {
         await setAnimation(false);
         sessionStorage.animation = JSON.stringify(false);
         navigate("/seeWords");
-      }, 2000); 
+      }, 2000);
     }
   }, [animation, navigate, setAnimation]);
 
