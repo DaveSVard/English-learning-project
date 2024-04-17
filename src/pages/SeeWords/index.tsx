@@ -108,7 +108,7 @@ export const SeeWords:React.FC = ():JSX.Element => {
                     {words.map(elm => {
                         return(
                             <div key={elm.id} className="seeWords__item">
-                                <div className="">
+                                <div>
                                     <div className="seeWords__item-top" >
                                         <p>{elm.english}</p>     
                                         <div className="seeWords__item-icons">

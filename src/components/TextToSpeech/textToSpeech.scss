@@ -11,6 +11,7 @@
     position: relative;
     width: clamp(290px, 40vw, 350px);
     height: 50px;
+    z-index: 1;
 
     &::before {
         content: "";
@@ -61,12 +62,11 @@
         border-radius: .5rem;
         overflow: hidden;
         display: none;
-
+        z-index: 1;
         .dropdown__options-item {
             padding: 12px 20px;
             cursor: pointer;
             font-size: 1.2rem;
-
             &:hover {
                 background-color: var(--white);
             }
@@ -74,6 +74,7 @@
     }
 
     &.dropdown-active .dropdown__options {
+        z-index: 1;
         display: block;
     }
 }

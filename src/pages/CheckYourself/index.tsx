@@ -66,7 +66,7 @@ export const CheckYourself:React.FC = () => {
         <div className="check">
             <div className="check__wrapper">
                 <div className="check__title">
-                    <h1>Check Yourself</h1>
+                    <h1>Check Yourself!</h1>
                 </div>
 
                 

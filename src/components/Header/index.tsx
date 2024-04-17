@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { Sidebar } from "../Sidebar";
 import { useAppDispatch } from "../../app/hooks";
 import { searchWord } from "../../features/words/wordsSlice";
@@ -12,7 +11,6 @@ export const Header:React.FC = React.memo(():JSX.Element => {
     const [toggleBtn, setToggleBtn] = useState<boolean>(false)
     const [isSidebar, setIsSidebar] = useState<boolean>(true)
     const [sidebarRef, setSidebarRef] = useState<HTMLDivElement | null>(null);
-    const [width, setWidth] = useState<number>(window.innerWidth)
     const seeSearch = () => {
         searchBtn.current.classList.toggle("active")   
     }
@@ -66,9 +64,7 @@ export const Header:React.FC = React.memo(():JSX.Element => {
                 <div ref={searchBtn} className="search__form">
                     <input type="text" placeholder="Search words..." onChange={(e) =>{ 
                         dispatch(searchWord(e.target.value))
-                        console.log(e.target.value);
-                        
-                        }}/>
+                    }}/>
                     <button className="fas fa-search"></button>
                 </div>
 
@@ -87,9 +83,3 @@ export const Header:React.FC = React.memo(():JSX.Element => {
         </header>
     )
 })
-
-// {!isSidebar ? (  
-//     <div id="menu-btn" className="fa-solid fa-bars" onClick={() => toggleSidebar()}></div> 
-// ) : ( 
-//     <div className="fa-solid fa-xmark"  onClick={() => toggleSidebar()}></div>
-// )}

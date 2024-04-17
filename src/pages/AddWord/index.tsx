@@ -64,7 +64,7 @@ export const AddWord:React.FC = ():JSX.Element => {
                                                     values.sentences.map((elm, i) => {
                                                         return( 
                                                             <div key={i} className="addWord__form-flex">
-                                                                <Field name={`sentences${[i]}`}>
+                                                                <Field name={`sentences.${[i]}`}>
                                                                     {({
                                                                         field, 
                                                                         form: { touched, errors }, 
@@ -74,11 +74,11 @@ export const AddWord:React.FC = ():JSX.Element => {
                                                                             <textarea 
                                                                                 {...field}
                                                                                 name={`sentences.${[i]}`}
-                                                                                onChange={handleChange} />
+                                                                                onChange={handleChange}
+                                                                            />
                                                                             <span className={values.sentences[i] ?"labelline span" : "labelline" }>
                                                                                 {errors.sentences && errors.sentences[i] && touched.sentences && touched.sentences[i] ? errors.sentences[i] : "Enter sentence"}
                                                                             </span>
-                                                                            
                                                                         </div>
                                                                     )}
                                                                 </Field>

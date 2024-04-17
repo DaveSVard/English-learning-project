@@ -27,6 +27,7 @@ export const Sidebar:React.FC<PropTypes> = React.memo(({onSidebarRef, toggleSide
                 <i className="fa-solid fa-graduation-cap logo"></i>
                 <p>Learn English</p>
             </div>
+            
             <nav className="navbar">
                 <NavLink to={"/seeWords"} onClick={() => toggleSidebarForPhone()}><i className="fa-solid fa-home"></i><span>See words</span></NavLink>
                 <NavLink to={"./addWord"} onClick={() => toggleSidebarForPhone()}><i className="fa-solid fa-plus"></i><span>Add word</span></NavLink>
