@@ -61,11 +61,7 @@ export const Header:React.FC = React.memo(():JSX.Element => {
                 </div>
 
                 <div className="header__icons">
-                    {!isSidebar ? (  
-                        <div id="menu-btn" className="fa-solid fa-bars" onClick={() => toggleSidebar()}></div> 
-                    ) : ( 
-                        <div className="fa-solid fa-xmark"  onClick={() => toggleSidebar()}></div>
-                    )}
+                    <div id="menu-btn" className="fa-solid fa-bars" onClick={() => toggleSidebar()}></div> 
                     <div id="search-btn" className="fa-solid fa-search" onClick={seeSearch}></div>
                     {!toggleBtn ? (
                         <div className="fa-solid fa-sun" onClick={() => enableDarkMode()}></div> 
@@ -79,3 +75,9 @@ export const Header:React.FC = React.memo(():JSX.Element => {
         </header>
     )
 })
+
+// {!isSidebar ? (  
+//     <div id="menu-btn" className="fa-solid fa-bars" onClick={() => toggleSidebar()}></div> 
+// ) : ( 
+//     <div className="fa-solid fa-xmark"  onClick={() => toggleSidebar()}></div>
+// )}

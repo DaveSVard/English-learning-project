@@ -27,11 +27,11 @@ export const Sidebar:React.FC<PropTypes> = React.memo(({onSidebarRef, toggleSide
                 <p>Learn English</p>
             </div>
             <nav className="navbar">
-                <NavLink to={"/seeWords"}><i className="fa-solid fa-home"></i><span>See words</span></NavLink>
-                <NavLink to={"./addWord"}><i className="fa-solid fa-plus"></i><span>Add word</span></NavLink>
-                <NavLink to={"./checkYourself"}><i className="fa-solid fa-flag-checkered"></i><span>Check yourself</span></NavLink>
-                <NavLink to={"./answersHistory"}><i className="fa-solid fa-file-lines"></i><span>Answers history</span></NavLink>
-                <NavLink to={"./settings"}><i className="fa-solid fa-gear"></i><span>Settings</span></NavLink>
+                <NavLink to={"/seeWords"} onClick={() => toggleSidebar()}><i className="fa-solid fa-home"></i><span>See words</span></NavLink>
+                <NavLink to={"./addWord"} onClick={() => toggleSidebar()}><i className="fa-solid fa-plus"></i><span>Add word</span></NavLink>
+                <NavLink to={"./checkYourself"} onClick={() => toggleSidebar()}><i className="fa-solid fa-flag-checkered"></i><span>Check yourself</span></NavLink>
+                <NavLink to={"./answersHistory"} onClick={() => toggleSidebar()}><i className="fa-solid fa-file-lines"></i><span>Answers history</span></NavLink>
+                <NavLink to={"./settings"} onClick={() => toggleSidebar()}><i className="fa-solid fa-gear"></i><span>Settings</span></NavLink>
             </nav>
         </div>
     )
