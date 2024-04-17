@@ -57,7 +57,7 @@ export const AnswersHistory:React.FC = ():JSX.Element => {
         <div className="history">
             <div className="history__wrapper">
                 <div className="history__title">
-                    <h1>Answers History</h1>
+                    <h1>Answers History!</h1>
                 </div>
 
                 <div className="history__inner-wrapper">
