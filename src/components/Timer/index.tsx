@@ -21,7 +21,7 @@ export const Timer: React.FC<PropTypes> = ({ time, setTime, result, other, setOt
     const failAudio = new Audio("./sounds/fail.wav")
     
     useEffect(() => {
-        if(result == IResult.TRUE || other) {
+        if(result == IResult.FALSE || result == IResult.TRUE || other) {
             setTime(15)
             setOther(false)
         }
