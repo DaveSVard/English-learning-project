@@ -32,6 +32,24 @@ describe('template spec', () => {
     cy.get('input[name="translate"]').should('have.value', '');
     cy.get('textarea[name="sentences.0"]').should('have.value', '');
 
+    // cy.get('input[name="english"]').should("exist").type("english");
+    // cy.get('input[name="english"]').invoke('val').then((value) => {
+    //   expect(typeof value).to.equal('string'); 
+    // });
+    // cy.get('input[name="translate"]').should("exist").type("translation");
+    // cy.get('input[name="translate"]').invoke('val').then((value) => {
+    //   expect(typeof value).to.equal('string'); 
+    // });
+    // cy.get('textarea[name="sentences.0"]').should("exist").type("This is an example sentence.");
+    // cy.get('textarea[name="sentences.0"]').invoke('val').then((value) => {
+    //   expect(typeof value).to.equal('string'); 
+    // });
+    // cy.get('button[type="submit"]').click();
+
+    // cy.get('input[name="english"]').should('have.value', '');
+    // cy.get('input[name="translate"]').should('have.value', '');
+    // cy.get('textarea[name="sentences.0"]').should('have.value', '');
+
     cy.get('a[href="/seeWords"]').click();
     cy.location("pathname").should("equal", "/seeWords");
 
@@ -55,6 +73,8 @@ describe('template spec', () => {
         })
       }
     });
+
+    // cy.get(".search__form").should("exist").children("button").should("exist").type('E').should("have.value", "English")
 
     cy.get('a[href="/checkYourself"]').click();
     cy.location("pathname").should("equal", "/checkYourself")
@@ -160,3 +180,5 @@ describe('template spec', () => {
 
   });
 })
+
+

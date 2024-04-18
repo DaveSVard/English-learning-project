@@ -13,20 +13,18 @@
     .container {
         padding: 1.5rem 2rem;
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        column-gap: 25px;
 
-        .header__logo {
-            color: var(--black);
-            font-size: 2.5rem;
-            font-weight: bolder;
+        .header__wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            column-gap: 25px;
         }
 
         .search__form {
-            width: 50rem;
-            padding: 1.5rem 2rem;
+            width: 100%;
+            padding: 1rem 2rem;
             border-radius: .5rem;
             margin-left: 4rem;
             display: flex;
@@ -70,13 +68,14 @@
 
         .header__icons {
             display: flex;
-            
+            justify-content: end;
             & div {
                 margin-left: .5rem;
                 width: 4.5rem;
                 height: 4.5rem;
                 cursor: pointer;
                 text-align: center;
+
                 font-size: 2rem;
                 line-height: 4.4rem;
                 background-color: var(--light-bg);
@@ -91,12 +90,13 @@
                 
             }
 
-            
             #search-btn {
                 display: none;
 
                 @include mediaSize768px {
                     display: inline-block;
+                    position: relative;
+                    right: 0;
                 }
             }
         }

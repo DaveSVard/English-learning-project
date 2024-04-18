@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./answersHistory.scss"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { selectAnswers } from "../../features/answers/answersSlice"
+import { clearAnswersById, clearAnswersHisory, selectAnswers } from "../../features/answers/answersSlice"
 import { AnimatedGif } from "../../components/AnimatedGif"
 
 export const AnswersHistory:React.FC = ():JSX.Element => {
@@ -13,8 +13,6 @@ export const AnswersHistory:React.FC = ():JSX.Element => {
     const [expandedHistoryId, setExpandedHistoryId] = useState<number | null>(null);
     const toggleHistoryDetails = (id:number, score:number, answersCount:number) => {
         setExpandedHistoryId(id == expandedHistoryId ? null : id);
-        console.log(score);
-        
         if(score >= Math.ceil(answersCount / 2)) {
             setHappy(true)
             setSad(false)
@@ -62,13 +60,21 @@ export const AnswersHistory:React.FC = ():JSX.Element => {
 
                 <div className="history__inner-wrapper">
                     <div className="history__content">
-                    {answers.map((elm, i) => {
+                        {answers.length ? ( 
+                            <div className="history__clear" onClick={() => dispatch(clearAnswersHisory())}>
+                                Clear history...
+                            </div> 
+                        ) : ( 
+                            <></>
+                        )}
+                        {answers.map((elm, i) => {
                             return(
                                 <div className="history__content-item__wrapper">
                                     {elm.score ? <div key={i} className="history__content-item__top" onClick={() => toggleHistoryDetails(i, elm.score, elm.answers.length)}>
                                         <div className="history__info">
                                             <p>{`${++i})`}</p>
                                             <p>Score: {elm.score}</p>
+                                            <i className="fa-solid fa-trash word-delete-btn" onClick={() => dispatch(clearAnswersById(elm.id))}></i>
                                         </div>
                                         <i className={`fa-solid fa-angle-${expandedHistoryId == i ? "up" : "down"}`}/>
                                     </div> : <></>}

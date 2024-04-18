@@ -33,6 +33,18 @@
                 margin-top: 25px;
                 display: flex;
                 flex-direction: column;
+
+                .history__clear {
+                    margin-bottom: 5px;
+                    font-size: 1.7rem;
+                    font-weight: 600;
+
+                    &:hover {
+                        color: var(--red);
+                        text-decoration: underline;
+                    }
+
+                }
     
                 .history__content-item__wrapper {
                     width: 100%;
@@ -57,6 +69,10 @@
                             display: flex;
                             column-gap: 10px;
                             font-weight: 600;
+
+                            & i {
+                                color: var(--red);
+                            }
                         }
                     }
     
